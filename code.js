@@ -1,4 +1,4 @@
-console.log("Hello")
+
 
 
 const getComputerChoice = () => {
@@ -10,8 +10,22 @@ const getComputerChoice = () => {
 
     // Use the random index to return a choice from the array
 
-    console.log(choices[randomIndex]);
+    console.log("The cp choice is:", choices[randomIndex])
     return choices[randomIndex];
 }
 
-getComputerChoice();
+const playRound=()=>{
+
+    const playerChoice="Scissors";
+    const computerChoice=getComputerChoice();
+
+    if (playerChoice === computerChoice) {
+        console.log("Draw!")
+    } else if (computerChoice==="Rock") {
+        console.log("U lose");
+    } else {
+        console.log("U win")
+    }
+}
+
+playRound();
