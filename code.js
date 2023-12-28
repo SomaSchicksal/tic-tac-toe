@@ -10,22 +10,33 @@ const getComputerChoice = () => {
 
     // Use the random index to return a choice from the array
 
-    console.log("The cp choice is:", choices[randomIndex])
-    return choices[randomIndex];
+    console.log("The cp choice is:", choices[randomIndex].toLowerCase())
+    return choices[randomIndex].toLowerCase();
 }
 
-const playRound=()=>{
+const playerChoice=prompt("Please enter a input:").toLowerCase();
 
-    const playerChoice="Scissors";
-    const computerChoice=getComputerChoice();
+const computerChoice=getComputerChoice();
+
+const playRound=(playerChoice, computerChoice)=>{
+
+    
 
     if (playerChoice === computerChoice) {
         console.log("Draw!")
-    } else if (computerChoice==="Rock") {
-        console.log("U lose");
-    } else {
-        console.log("U win")
-    }
+    } else if (computerChoice==="rock" && playerChoice==="paper") {
+        console.log("U Win");
+    } else if (computerChoice==="rock" && playerChoice==="scissors") {
+        console.log("U Lose");
+    } else if (computerChoice==="paper" && playerChoice==="rock") {
+        console.log("U Lose");
+    } else if (computerChoice==="paper" && playerChoice==="scissors") {
+        console.log("U Win");
+    } else if (computerChoice==="scissors" && playerChoice==="rock") {
+        console.log("U win");
+    } else if (computerChoice==="scissors" && playerChoice==="paper") {
+        console.log("U Lose");
+    } 
 }
 
-playRound();
+playRound(playerChoice, computerChoice);
