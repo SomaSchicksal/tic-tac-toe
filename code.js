@@ -1,11 +1,17 @@
 console.log("Hello")
 
 
-const getComputerChoice=()=>{
+const getComputerChoice = () => {
 
-    computerSelection="Scissor";
-    console.log(computerSelection);
-    return computerSelection;
+    const choices = ['Rock', 'Paper', 'Scissors'];
+
+    // Generate a random index between 0 and 2
+    const randomIndex = Math.floor(Math.random() * choices.length);
+
+    // Use the random index to return a choice from the array
+
+    console.log(choices[randomIndex]);
+    return choices[randomIndex];
 }
 
 getComputerChoice();
